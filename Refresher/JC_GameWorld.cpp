@@ -25,4 +25,7 @@ void JC_GameWorld::main()
 
 	JC_DiceRolling myDice = JC_DiceRolling();
 	myDice.RollDice();
+
+	JC_ScoreKeeper myKeep = JC_ScoreKeeper();
+	myKeep.ScoreKeep();
 }

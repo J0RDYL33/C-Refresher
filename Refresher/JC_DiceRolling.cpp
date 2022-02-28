@@ -16,10 +16,26 @@ void JC_DiceRolling::RollDice()
 	char diceSplit[3 + 1];
 	strcpy_s(diceSplit, dice.c_str());
 
-	int numOfDice = diceSplit[0] - '0';
-	int sidesOnDice = diceSplit[2] - '0';
+	//int numOfDice = diceSplit[0] - '0';
+	//int sidesOnDice = diceSplit[2] - '0';
+	const int numOfDice = 5;
+	const int sidesOnDice = 100;
 
 	//rand() % 2;
+	int currentRoll = 0;
+	int totalOfRolls = 0;
+	int eachRoll[numOfDice];
+	for (int i = 0; i < numOfDice; i++)
+	{
+		currentRoll = rand() % sidesOnDice + 1;
+		eachRoll[i] = currentRoll;
+		totalOfRolls += currentRoll;
+	}
 
-	cout << "Total number: " << numOfDice * sidesOnDice << endl << endl;
+	cout << totalOfRolls << ": ";
+	for (int i = 0; i < numOfDice; i++)
+	{
+		cout << eachRoll[i] << " ";
+	}
+	cout << endl << endl;
 }
